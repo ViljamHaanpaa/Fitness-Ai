@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import { useWorkout } from "../contexts/WorkoutContext";
 
 interface AnswerButtonProps {
   text: string;
@@ -19,18 +20,20 @@ const AnswerButton = ({ text, onClick }: AnswerButtonProps) => (
 export const GetStarted = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
-  const [answers, setAnswers] = useState({
-    gender: "",
-    goal: "",
-  });
+  const { updateWorkoutData } = useWorkout();
 
   const handleAnswer = (answer: string) => {
     if (step === 1) {
-      setAnswers((prev) => ({ ...prev, gender: answer }));
+      updateWorkoutData({ gender: answer });
       setStep(2);
     } else if (step === 2) {
-      setAnswers((prev) => ({ ...prev, goal: answer }));
-      navigate("/training-program", { state: answers });
+      updateWorkoutData({
+        goal: answer,
+        level: "beginner",
+        duration: 60,
+        equipment: ["bodyweight"],
+      });
+      navigate("/training-program");
     }
     console.log(`Selected: ${answer}`);
   };
