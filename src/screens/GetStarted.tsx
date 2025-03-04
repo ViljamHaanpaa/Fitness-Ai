@@ -21,7 +21,6 @@ export const GetStarted = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const { updateWorkoutData } = useWorkout();
-
   const handleAnswer = (answer: string) => {
     if (step === 1) {
       updateWorkoutData({ gender: answer });
@@ -29,9 +28,8 @@ export const GetStarted = () => {
     } else if (step === 2) {
       updateWorkoutData({
         goal: answer,
-        level: "beginner",
+        level: "intermediate",
         duration: 60,
-        equipment: ["bodyweight"],
       });
       navigate("/training-program");
     }
