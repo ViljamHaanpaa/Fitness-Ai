@@ -45,3 +45,9 @@ This project is in early development. Current focus areas:
 
 - Core AI integration
 - User interface development
+
+![alt text](<Showcase images/Näyttökuva 2025-03-05 001104.png>)
+![alt text](<Showcase images/Näyttökuva 2025-03-05 001109.png>)
+![alt text](<Showcase images/Näyttökuva 2025-03-05 001114.png>)
+![alt text](<Showcase images/Näyttökuva 2025-03-05 001134.png>)
+![alt text](<Showcase images/Näyttökuva 2025-03-05 000748.png>)
