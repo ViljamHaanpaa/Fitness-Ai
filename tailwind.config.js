@@ -4,12 +4,17 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "fade-in": "fadeIn 10s ease-in-out", // Increased to 15 seconds
+        "fade-in": "fadeIn 3s ease-in-out",
+        "fade-out": "fadeOut 3s ease-in-out",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
         },
       },
     },

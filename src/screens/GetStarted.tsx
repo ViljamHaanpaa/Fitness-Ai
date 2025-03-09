@@ -76,19 +76,19 @@ export const GetStarted = () => {
             <div className="flex flex-col items-center mt-10">
               <AnswerButton
                 text="Lose Weight"
-                onClick={() => handleAnswer("lose_weight")}
+                onClick={() => handleAnswer("Lose Weight")}
               />
               <AnswerButton
                 text="Build Muscle"
-                onClick={() => handleAnswer("build_muscle")}
+                onClick={() => handleAnswer("Build Muscle")}
               />
               <AnswerButton
                 text="Get Stronger"
-                onClick={() => handleAnswer("get_stronger")}
+                onClick={() => handleAnswer("Get Stronger")}
               />
               <AnswerButton
                 text="Stay Healthy"
-                onClick={() => handleAnswer("stay_healthy")}
+                onClick={() => handleAnswer("Stay Healthy")}
               />
             </div>
           </>
