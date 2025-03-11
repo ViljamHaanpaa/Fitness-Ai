@@ -34,14 +34,15 @@ export const TrainingProgram = () => {
           setIsLoading(false);
           return;
         } else {
-          console.error(`Attempt ${i + 1} failed. Retrying...`);
+          console.log(`Attempt ${i + 1} failed. Retrying...`);
         }
       }
 
-      console.error("Failed to generate workout plan after multiple attempts.");
+      console.log("Failed to generate workout plan after multiple attempts.");
       setIsLoading(false);
     };
     generatePlan();
+    MAX_RETRIES = 0; // Reset retries on unmount
   }, [workoutData]);
 
   if (!plan && !isLoading) return null;
