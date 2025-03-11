@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { useWorkout } from "../contexts/WorkoutContext";
-
+import backgroundImage from "../public/images/background.jpg";
 interface AnswerButtonProps {
   text: string;
   onClick: () => void;
@@ -47,6 +47,16 @@ const questions: Question[] = [
     ],
   },
   {
+    title: "How long do you want your workout to be?",
+    subtitle: "We'll customize your workout accordingly",
+    options: [
+      { text: "15 minutes", value: "15", key: "duration" },
+      { text: "30 minutes", value: "30", key: "duration" },
+      { text: "45 minutes", value: "45", key: "duration" },
+      { text: "60 minutes", value: "60", key: "duration" },
+    ],
+  },
+  {
     title: "What equipment do you have access to?",
     subtitle: "We'll customize your workout accordingly",
     options: [
@@ -63,7 +73,10 @@ const questions: Question[] = [
 const AnswerButton = ({ text, onClick }: AnswerButtonProps) => (
   <button
     onClick={onClick}
-    className="mt-4 px-16 py-4 bg-gray-900 font-semibold rounded-md hover:bg-blue-700 transition text-lg w-64"
+    className="mt-8 px-30 py-8 bg-black/20 font-semibold rounded-3xl 
+    hover:bg-black/90 hover:scale-105 transition-all duration-200 
+    text-xl w-96 
+    shadow-lg hover:shadow-[0_8px_30px_rgba(0,0,0,0.9)]"
   >
     {text}
   </button>
@@ -80,8 +93,6 @@ export const GetStarted = () => {
     if (step < questions.length) {
       setStep(step + 1);
     } else {
-      // Add default duration before navigating
-      updateWorkoutData({ duration: 60 });
       navigate("/training-program");
     }
     console.log(`Selected ${key}: ${answer}`);
@@ -110,8 +121,20 @@ export const GetStarted = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen">
-      {renderStep()}
+    <div
+      className="min-h-screen bg-fixed bg-center relative animate-fade-in"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundBlendMode: "overlay",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+      }}
+    >
+      <div className="flex flex-col items-center min-h-screen">
+        {renderStep()}
+      </div>
     </div>
   );
 };

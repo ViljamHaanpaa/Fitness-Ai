@@ -4,7 +4,7 @@ export interface WorkoutData {
   gender: string;
   goal: string;
   level: string;
-  duration: number;
+  duration: string;
   equipment?: string;
 }
 
@@ -19,9 +19,9 @@ export const WorkoutProvider = ({ children }: { children: ReactNode }) => {
   const [workoutData, setWorkoutData] = useState<WorkoutData>({
     gender: "",
     goal: "",
-    level: "intermediate",
-    duration: 60,
-    equipment: "basic gym equipment",
+    level: "",
+    duration: "",
+    equipment: "",
   });
 
   const updateWorkoutData = (newData: Partial<WorkoutData>) => {
