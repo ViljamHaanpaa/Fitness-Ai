@@ -15,6 +15,7 @@ The JSON should match the exact structure below:
   "title": "{goal} Workout - {level} Level",
   "duration": "{duration}",
   "gender": "{gender}",
+  "equipment": "{equipment}",
   "warmup": {
     "duration": "{warmupTime}",
     "exercises": [

@@ -51,7 +51,8 @@ export const generateWorkoutPlan = async (workoutData: WorkoutData) => {
               .replace("{duration}", workoutData.duration.toString())
               .replace("{warmupTime}", "10")
               .replace("{mainTime}", "40")
-              .replace("{cooldownTime}", "10"),
+              .replace("{cooldownTime}", "10")
+              .replace("{equipment}", workoutData.equipment),
           },
         ],
         temperature: 0.6,

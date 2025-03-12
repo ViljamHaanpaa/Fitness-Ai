@@ -5,7 +5,7 @@ export interface WorkoutData {
   goal: string;
   level: string;
   duration: string;
-  equipment?: string;
+  equipment: string;
 }
 
 interface WorkoutContextType {
